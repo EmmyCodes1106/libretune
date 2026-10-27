@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-canvas: #F7F6FA;
+    --color-surface: #FFFFFF;
+    --color-raised: #F0EFF5;
+    --color-border: #E3E1EB;
+    --color-text-primary: #191720;
+    --color-text-secondary: #656170;
+    --color-accent: #A78BFA;
+    --color-action: #7750E8;
+  }
+
+  .dark {
+    --color-canvas: #101014;
+    --color-surface: #19191F;
+    --color-raised: #23232C;
+    --color-border: #35353F;
+    --color-text-primary: #F6F5FA;
+    --color-text-secondary: #B1AFBF;
+    --color-accent: #A78BFA;
+    --color-action: #7750E8;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Accessible focus ring: 2-3px violet focus ring */
+  *:focus-visible {
+    outline: 2px solid #A78BFA;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.4);
+}
+
+/* Range input styling for sleek progress & volume bars */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dark input[type=range]::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #A78BFA;
+  margin-top: -4px;
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
+  transition: transform 0.1s ease;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
