@@ -7,8 +7,11 @@ import MobileNav from './MobileNav';
 import Toast from './Toast';
 import OfflineBanner from './OfflineBanner';
 import NowPlaying from './NowPlaying';
+import { useAudio } from '../hooks/useAudio';
 
 export default function Layout() {
+  const { seek } = useAudio();
+
   return (
     <div className="min-h-screen bg-brand-canvas text-brand-text-primary flex flex-col selection:bg-brand-action selection:text-white">
       {/* Skip to Content for Accessibility */}
@@ -45,10 +48,10 @@ export default function Layout() {
       </div>
 
       {/* Persistent Audio Player Bar */}
-      <Player />
+      <Player seek={seek} />
 
       {/* Expanded Now Playing View */}
-      <NowPlaying />
+      <NowPlaying seek={seek} />
 
       {/* Mobile Bottom Navigation */}
       <MobileNav />

@@ -17,9 +17,8 @@ import {
 import { usePlayerStore } from '../store/playerStore';
 import { useLibraryStore } from '../store/libraryStore';
 import { formatTime } from '../utils/formatTime';
-import { useAudio } from '../hooks/useAudio';
 
-export default function NowPlaying() {
+export default function NowPlaying({ seek }) {
   const {
     currentTrack,
     isPlaying,
@@ -42,7 +41,6 @@ export default function NowPlaying() {
   } = usePlayerStore();
 
   const { isFavorite, toggleFavorite } = useLibraryStore();
-  const { seek } = useAudio();
 
   // Close on Escape key
   useEffect(() => {

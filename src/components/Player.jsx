@@ -15,11 +15,9 @@ import {
 import { usePlayerStore } from '../store/playerStore';
 import { useLibraryStore } from '../store/libraryStore';
 import { formatTime } from '../utils/formatTime';
-import { useAudio } from '../hooks/useAudio';
 import QueuePanel from './QueuePanel';
 
-export default function Player() {
-  const { seek } = useAudio();
+export default function Player({ seek }) {
   const {
     currentTrack,
     isPlaying,
